@@ -15,7 +15,7 @@ function addAffirmation(event) {
         affirmation: affirmation.value
     }
     
-    axios.post(`${baseUrl}/add`, body)
+    axios.post(`${baseUrl}/affirmations`, body)
     .then(res => {
         console.log(res.data)
     })
