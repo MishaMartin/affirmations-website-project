@@ -11,7 +11,7 @@ module.exports = {
         affirmations.push(newAffirmation)
         globalId++
 
-        res.status(200).send(motorcycles)
+        res.status(200).send(affirmations)
     },
     getAffirmations: (req,res) => {
         for(let i=0; i <affirmations.length; i++){
