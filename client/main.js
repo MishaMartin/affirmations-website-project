@@ -8,6 +8,14 @@ const addBtn = document.getElementById("addBtn")
 const themes = document.getElementById("themes")
 const addForm = document.querySelector("form")
 
+function getAffirmation(event) {
+    event.preventDefault()
+    axios.get(`${baseUrl}/affirmations`)
+    .then(res => {
+        console.log(res.data)
+    })
+}
+
 function addAffirmation(event) {
     event.preventDefault()
 
@@ -22,12 +30,6 @@ function addAffirmation(event) {
     .catch(err => console.log(err))
 }
 
-function getAffirmation() {
-    axios.get(`${baseUrl}/affirmations`)
-    .then(res => {
-        console.log(res.data)
-    })
-}
 
 addForm.addEventListener('submit', addAffirmation)
 affirmationBtn.addEventListener('click', getAffirmation)
