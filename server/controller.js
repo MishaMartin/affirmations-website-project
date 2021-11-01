@@ -12,5 +12,12 @@ module.exports = {
         globalId++
 
         res.status(200).send(motorcycles)
+    },
+    getAffirmations: (req,res) => {
+        for(let i=0; i <affirmations.length; i++){
+            console.log(affirmations[i])
+        }
+
+        res.status(200).send(affirmations[i])
     }
 }

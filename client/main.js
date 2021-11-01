@@ -24,3 +24,5 @@ function addAffirmation(event) {
 
 addForm.addEventListener('submit', addAffirmation)
 
+
+

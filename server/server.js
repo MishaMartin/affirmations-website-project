@@ -37,6 +37,9 @@ app.get('/controller', (req,res) => {
 app.get('/affirmations', (req, res) => {
     res.sendFile(path.join(__dirname, '/server/affirmations.json'))
 })
+
+app.get('/affirmation', ctrl.getAffirmations)
+
 app.post('/add', ctrl.addAffirmations)
 
 app.use(rollbar.errorHandler())
