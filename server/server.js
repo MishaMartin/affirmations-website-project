@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const path = require('path')
 const Rollbar = require('rollbar')
 
@@ -13,10 +14,10 @@ rollbar.log('Hello world!')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 const ctrl = require("./controller.js")
 
-//endpoints
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'))
     rollbar.info('html file served successfully')
@@ -39,6 +40,7 @@ app.get('/affirmations', (req, res) => {
 })
 
 app.get('/affirmations', ctrl.getAffirmations)
+app.get('/affirmations/:id', ctrl.getRandomAffirmation)
 
 app.post('/affirmations', ctrl.addAffirmations)
 

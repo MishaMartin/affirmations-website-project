@@ -14,10 +14,10 @@ module.exports = {
         res.status(200).send(affirmations)
     },
     getAffirmations: (req,res) => {
-        for(let i=0; i <affirmations.length; i++){
-            console.log(affirmations[i])
-        }
-
-        res.status(200).send(affirmations[i])
+        res.status(200).send(affirmations)
+    },
+    getRandomAffirmation: (req, res) => {
+        const {id} = req.params
+        res.status(200).send(affirmations[id].affirmation)
     }
 }

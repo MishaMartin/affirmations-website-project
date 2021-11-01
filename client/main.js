@@ -3,7 +3,7 @@ console.log("Hello World!")
 const baseUrl = "https://i-am-affirmations.herokuapp.com"
 
 const affirmationBtn = document.getElementById("affirmation")
-const addAffirmation = document.getElementById("addAffirmation")
+const addAffirmations = document.getElementById("addAffirmation")
 const addBtn = document.getElementById("addBtn")
 const themes = document.getElementById("themes")
 const addForm = document.querySelector("form")
