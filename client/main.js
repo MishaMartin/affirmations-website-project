@@ -22,7 +22,15 @@ function addAffirmation(event) {
     .catch(err => console.log(err))
 }
 
+function getAffirmation() {
+    axios.get(`${baseUrl}/affirmations`)
+    .then(res => {
+        console.log(res.data)
+    })
+}
+
 addForm.addEventListener('submit', addAffirmation)
+affirmationBtn.addEventListener('click', getAffirmation)
 
 
 
