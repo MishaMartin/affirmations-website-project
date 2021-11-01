@@ -10,9 +10,10 @@ const addForm = document.querySelector("form")
 
 function getAffirmation(event) {
     event.preventDefault()
-    axios.get(`${baseUrl}/affirmations`)
+    const {globalId} = req.param
+    axios.get(`${baseUrl}/affirmations/:id`)
     .then(res => {
-        console.log(res.data)
+        console.log(Math.floor(Math.random() * globalId))
     })
 }
 
