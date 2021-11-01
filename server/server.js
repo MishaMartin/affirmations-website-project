@@ -17,6 +17,26 @@ app.use(express.json())
 const ctrl = require("./controller.js")
 
 //endpoints
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/index.html'))
+    rollbar.info('html file served successfully')
+})
+
+app.get('/style', (req,res) =>{
+    res.sendFile(path.join(__dirname, '../client/style.css'))
+})
+
+app.get('/main', (req,res) =>{
+    res.sendFile(path.join(__dirname, '../client/main.js'))
+})
+
+app.get('/controller', (req,res) => {
+    res.sendFile(path.join("/server/controller.js"))
+})
+
+app.get('/affirmations', (req, res) => {
+    res.sendFile(path.join(__dirname, '/server/affirmations.json'))
+})
 
 app.use(rollbar.errorHandler())
 
