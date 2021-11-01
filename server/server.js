@@ -31,11 +31,11 @@ app.get('/main', (req,res) =>{
 })
 
 app.get('/controller', (req,res) => {
-    res.sendFile(path.join("/server/controller.js"))
+    res.sendFile(path.join("/controller.js"))
 })
 
 app.get('/affirmations', (req, res) => {
-    res.sendFile(path.join(__dirname, '/server/affirmations.json'))
+    res.sendFile(path.join(__dirname, '/affirmations.json'))
 })
 
 app.get('/affirmation', ctrl.getAffirmations)
