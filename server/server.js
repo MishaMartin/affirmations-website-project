@@ -16,8 +16,6 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const ctrl = require("./controller.js")
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'))
     rollbar.info('html file served successfully')
