@@ -9,6 +9,9 @@ h1{
     font-size: 470%;
     
 }
+h2{
+    font-size: 250%;
+}
 .split {
     height: 100%;
     width: 50%;
@@ -33,6 +36,14 @@ h1{
     text-align: center;
   }
 .affHead1 {
-    margin-top: -125px;
+    margin-top: -180px;
     
+}
+#addAffirmation{
+    height: 25px;
+    width: 250px;
+}
+#addBtn {
+    height: 30px;
+    width: 75px;
 }
