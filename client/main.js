@@ -1,58 +1,40 @@
 console.log("Hello World!")
 
-const baseUrl = "https://i-am-affirmations.herokuapp.com"
-
-const affirmationBtn = document.getElementById("affirmation")
-const addAffirmations = document.getElementById("addAffirmation")
-const addBtn = document.getElementById("addBtn")
-const themes = document.getElementById("themes")
-const addForm = document.querySelector("form")
-const affirmationsCtr = document.querySelector('#affirmations-container')
-const affCallback = ({ data: affirmation }) => displayAffirmation(affirmation)
-
-function getAffirmation(aff) {
-    const affirmationCard = document.createElement('div')
-    affirmationCard.classList.add('affirmation-card')
-
-    affirmationCard.innerHTML = `<p${aff.affirmation}/>`
-    affirmationsCtr.appendChild(affirmationCard)
-
-    let id = Math.floor(Math.random() * 4)
-    console.log(id)
-    //`${aff.id}`
-
-    axios.get(`${baseUrl}/affirmations/${id}`)
-    .then(res => {
-        console.log(res.data)
-        return affCallback(res.data)
-    })
-}
-
 function addAffirmation(event) {
-    // event.preventDefault()
-
-    let body = {
-        affirmation: affirmation.value
+    event.preventDefault()
+    let inputField = document.querySelector("input")
+    
+    let affirmation = document.createElement('li')
+    
+    let affirmationString = document.createElement('span')
+    
+    affirmationString.textContent = inputField.value
+    
+    affirmation.appendChild(affirmationString)
+    
+    let deleteBtn = document.createElement("button")
+    deleteBtn.textContent = "x"
+    deleteBtn.addEventListener("click", deleteAffirmation);
+    affirmation.appendChild(deleteBtn)
+    
+    let list = document.querySelector("ul")
+    
+    list.appendChild(affirmation)
+    
+    inputField.value = ''
+    
     }
     
-    axios.post(`${baseUrl}/affirmations`, body)
-    .then(res => {
-        console.log(res.data)
-    })
-    .catch(err => console.log(err))
-}
-
-function displayAffirmation() {
-    console.log()
-    affirmationsCtr.innerHTML = ``
-        getAffirmation()
+    document.querySelector("form").addEventListener('submit', addAffirmation)
+    const message = document.querySelector('#message')
+    
+    function deleteAffirmation(event){
+        event.target.parentNode.remove()
+        message.textContent = "Affirmation deleted!"
+    } 
     
 
-}
 
-
-addForm.addEventListener('submit', addAffirmation)
-affirmationBtn.addEventListener('click', getAffirmation)
 
 
 

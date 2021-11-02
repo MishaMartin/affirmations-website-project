@@ -31,20 +31,6 @@ app.get('/main', (req,res) =>{
     res.sendFile(path.join(__dirname, '../client/main.js'))
 })
 
-app.get('/controller', (req,res) => {
-    res.sendFile(path.join("/controller.js"))
-})
-
-app.get('/affirmations', (req, res) => {
-    res.sendFile(path.join(__dirname, '/affirmations.json'))
-})
-
-app.get('/affirmations', ctrl.getAffirmations)
-app.get('/affirmations/:id', ctrl.getRandomAffirmation)
-
-
-
-app.post('/affirmations', ctrl.addAffirmations)
 
 app.use(rollbar.errorHandler())
 
