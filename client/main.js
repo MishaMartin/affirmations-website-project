@@ -30,7 +30,6 @@ function addAffirmation(event) {
     
     function deleteAffirmation(event){
         event.target.parentNode.remove()
-        message.textContent = "Affirmation deleted!"
     } 
     
 
