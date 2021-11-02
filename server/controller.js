@@ -18,6 +18,7 @@ module.exports = {
     },
     getRandomAffirmation: (req, res) => {
         const {id} = req.params
+        const {affirmation} = req.body
         res.status(200).send(affirmations[id].affirmation)
     }
 }

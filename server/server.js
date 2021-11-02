@@ -42,6 +42,8 @@ app.get('/affirmations', (req, res) => {
 app.get('/affirmations', ctrl.getAffirmations)
 app.get('/affirmations/:id', ctrl.getRandomAffirmation)
 
+
+
 app.post('/affirmations', ctrl.addAffirmations)
 
 app.use(rollbar.errorHandler())

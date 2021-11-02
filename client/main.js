@@ -7,18 +7,29 @@ const addAffirmations = document.getElementById("addAffirmation")
 const addBtn = document.getElementById("addBtn")
 const themes = document.getElementById("themes")
 const addForm = document.querySelector("form")
+const affirmationsCtr = document.querySelector('#affirmations-container')
+const affCallback = ({ data: affirmation }) => displayAffirmation(affirmation)
 
-function getAffirmation(event) {
-    event.preventDefault()
-    const {globalId} = req.param
-    axios.get(`${baseUrl}/affirmations/:id`)
+function getAffirmation(aff) {
+    const affirmationCard = document.createElement('div')
+    affirmationCard.classList.add('affirmation-card')
+
+    affirmationCard.innerHTML = `<p${aff.affirmation}/>`
+    affirmationsCtr.appendChild(affirmationCard)
+
+    let id = Math.floor(Math.random() * 4)
+    console.log(id)
+    //`${aff.id}`
+
+    axios.get(`${baseUrl}/affirmations/${id}`)
     .then(res => {
-        console.log(Math.floor(Math.random() * globalId))
+        console.log(res.data)
+        return affCallback(res.data)
     })
 }
 
 function addAffirmation(event) {
-    event.preventDefault()
+    // event.preventDefault()
 
     let body = {
         affirmation: affirmation.value
@@ -29,6 +40,14 @@ function addAffirmation(event) {
         console.log(res.data)
     })
     .catch(err => console.log(err))
+}
+
+function displayAffirmation() {
+    console.log()
+    affirmationsCtr.innerHTML = ``
+        getAffirmation()
+    
+
 }
 
 
