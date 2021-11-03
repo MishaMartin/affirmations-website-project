@@ -38,19 +38,22 @@ h2{
     text-align: center;
   }
 .affHead1 {
-    margin-top: -200px;
+    margin-top: -185px;
     
 }
 #addAffirmation{
+   
     height: 25px;
     width: 250px;
     font-family: "sans-serif";
 
 }
 #addBtn {
+    
     height: 30px;
     width: 75px;
     font-family: "sans-serif";
+  
 
 }
 ul{
