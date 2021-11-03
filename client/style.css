@@ -5,8 +5,8 @@ html{
 }
 h1{
     text-align: center;
-    margin-top: 100px;
-    font-size: 470%;
+    margin-top: 60px;
+    font-size: 375%;
     font-family: "sans-serif";
     
 }
@@ -61,6 +61,12 @@ ul{
 button{
     height: 30px;
     width: 45px;
+    font-family: "sans-serif";
+
+}
+h3 {
+    text-align: center;
+    font-size: 150%;
     font-family: "sans-serif";
 
 }
